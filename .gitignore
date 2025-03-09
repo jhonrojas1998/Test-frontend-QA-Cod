@@ -13,3 +13,11 @@ pytest_cache/
 
 # Archivos de Playwright (si descargas navegadores localmente)
 playwright/.cache/
+
+# reportes de pruebas con allure
+
+allure-results/
+
+# videos de las pruebas ejecutadas
+
+videos/

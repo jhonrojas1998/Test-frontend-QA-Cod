@@ -68,6 +68,11 @@ playwright-python-POM/
    ```bash
    playwright install
    ```
+   
+5. **Instala allure**  
+   ```bash
+   python -m pip install allure-pytest
+   ```
 
 ## 🛠️ Cómo ejecutar las pruebas
 
@@ -85,5 +90,41 @@ Ejecutar en modo **headless** (sin interfaz gráfica):
 ```bash
 pytest tests/ --headless
 ```
+Ejecutar todas las pruebas con reportes en allure:  
+```bash
+pytest --alluredir=allure-results
+allure serve allure-results
+```
+
+Ejecutar todas las pruebas con reportes en allure y abrir los reportes:  
+```bash
+pytest --alluredir=allure-results
+allure serve allure-results
+```
+Eliminar la carpeta allure-results antes de la ejecucion y luego Ejecutar todas las pruebas y solo genera los reportes en allure no los abre de una ves.
+```bash
+Remove-Item -Recurse -Force allure-results -ErrorAction SilentlyContinue; pytest --alluredir=allure-results
+```
+Ejecutar prueba en especifica con retraso de 1 segundo por cada iteracion en la prueba y generar los resultados de allure
+```bash
+pytest tests/test_cart.py --headed --slowmo 1000 --alluredir=allure-results
+```
+Elimina la carpeta de allure-results manualmente
+```bash
+Remove-Item -Recurse -Force allure-results
+```
+Elimina la carpeta de allure-results manualmente y luego ejecuta todas las pruebas del proyecto y luego genera el reporte y lo abre automaticamente en esta sola linea de comando
+```bash
+Remove-Item -Recurse -Force allure-results -ErrorAction SilentlyContinue; pytest --alluredir=allure-results; allure serve allure-results
+```
+Elimina la carpeta de allure-results manualmente y luego ejecuta una prueba en especificoy con retraso de un segundoy luego genera el reporte y lo abre automaticamente en esta sola linea de comando
+```bash
+Remove-Item -Recurse -Force allure-results -ErrorAction SilentlyContinue; pytest tests/test_cart.py --headed --slowmo 1000 --alluredir=allure-results; allure serve allure-results
+```
+
+
+
+
+
 
 
