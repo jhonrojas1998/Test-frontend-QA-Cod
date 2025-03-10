@@ -61,7 +61,8 @@ playwright-python-POM/
 
 3. **Instala las dependencias**  
    ```bash
-   pip install -r requirements.txt
+   python -m pip install -r requirements.txt
+   python -m pip freeze > requirements.txt
    ```
 
 4. **Instala Playwright y sus navegadores**  
@@ -73,11 +74,7 @@ playwright-python-POM/
    ```bash
    python -m pip install allure-pytest
    ```
-6. **Instalar dependencias**
-```sh
-python -m pip freeze > requirements.txt
-python -m pip install -r requirements.txt
-```
+   
 
 ## 🛠️ Cómo ejecutar las pruebas
 
