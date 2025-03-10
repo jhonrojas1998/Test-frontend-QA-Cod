@@ -11,6 +11,7 @@ def context(browser) -> BrowserContext:
         record_video_dir="videos/",
     )
     return context
+    
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_sessionstart(session):
@@ -20,7 +21,7 @@ def pytest_sessionstart(session):
         if os.path.exists(results_dir):
             shutil.rmtree(results_dir)
         os.makedirs(results_dir)
-        
+
  # Borrar videos si existe
     videos_dir = "videos"
     if os.path.exists(videos_dir):

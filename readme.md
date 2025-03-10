@@ -73,6 +73,11 @@ playwright-python-POM/
    ```bash
    python -m pip install allure-pytest
    ```
+6. **Instalar dependencias**
+```sh
+python -m pip freeze > requirements.txt
+python -m pip install -r requirements.txt
+```
 
 ## 🛠️ Cómo ejecutar las pruebas
 
